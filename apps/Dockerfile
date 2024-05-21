@@ -9,7 +9,7 @@ COPY ./apps/Gemfile       /apps/Gemfile
 COPY ./apps/Gemfile.lock  /apps/Gemfile.lock
 RUN bundle install
 
-COPY entrypoint.sh /usr/bin/
+COPY ./apps/entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh && \
     cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 ENTRYPOINT ["entrypoint.sh"]

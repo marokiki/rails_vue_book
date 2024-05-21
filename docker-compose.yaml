@@ -10,7 +10,9 @@ services:
       POSTGRES_PASSWORD: dev
       POSTGRES_DB: dev
   web:
-    build: .
+    build: 
+      context: .
+      dockerfile: apps/Dockerfile
     volumes:
       - ./apps:/apps
     ports:
