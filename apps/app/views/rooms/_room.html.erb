@@ -1,6 +1,6 @@
 <div id="<%= dom_id room %>">
   <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
+    <strong class="block font-medium mb-1">Room Name:</strong>
     <%= room.name %>
   </p>
 
@@ -9,4 +9,9 @@
     <%= room.profile %>
   </p>
 
+  <% if action_name != "show" %>
+    <%= link_to "Show", room, class: "lnk_btn" %>
+    <%= link_to "Edit", edit_room_path(room), class: "lnk_btn ml-2" %>
+    <hr class="mt-6">
+  <% end %>
 </div>
