@@ -14,6 +14,12 @@
   <body>
     <%= render 'layouts/navi' %>
     <main class="container mx-auto mt-28 px-5 flex">
+      <% if notice.present? %>
+        <p class="alarm text-green-500" id="notice"><%= notice %></p>
+      <% end %>
+      <% if alert.present? %>
+        <p class="alarm text-pink-500" id="alert"><%= alert%></p>
+      <% end %>
       <%= yield %>
     </main>
   </body>
